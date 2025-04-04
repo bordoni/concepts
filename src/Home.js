@@ -18,7 +18,7 @@ function Home() {
           <h2>{concept.name}</h2>
           <p>{concept.description}</p>
           <a 
-            href={`/${concept.path}`}
+            href={`/${concept.path}/`}
             className="demo-link"
             target="_blank"
             rel="noopener noreferrer"
