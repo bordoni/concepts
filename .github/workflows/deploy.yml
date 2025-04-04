@@ -34,9 +34,14 @@ jobs:
         run: |
           npm install
           npm run build
-          # Move home page build to the root of the build directory
-          mkdir -p build
-          mv build/* build/
+          # Create a temporary directory for the final build
+          mkdir -p final-build
+          # Move the home page build to the final build directory
+          cp -r build/* final-build/
+          # Clean up the original build directory
+          rm -rf build
+          # Rename the final build directory
+          mv final-build build
 
       - name: Build concepts
         run: |
@@ -49,7 +54,7 @@ jobs:
               npm run build
               # Move build output to a subdirectory matching the concept name
               mkdir -p ../build/${dir%/}
-              mv build/* ../build/${dir%/}/
+              cp -r build/* ../build/${dir%/}/
               cd ..
             fi
           done
