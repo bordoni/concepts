@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
 
+const BASE_PATH = '/concepts';
+
 const concepts = [
   {
     name: 'Button Group IAC',
@@ -18,7 +20,7 @@ function Home() {
           <h2>{concept.name}</h2>
           <p>{concept.description}</p>
           <a 
-            href={`/${concept.path}/`}
+            href={`${BASE_PATH}/${concept.path}/`}
             className="demo-link"
             target="_blank"
             rel="noopener noreferrer"
