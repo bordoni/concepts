@@ -1,0 +1,67 @@
+:root {
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-20: #005a87;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.field-control {
+  margin-bottom: 20px;
+}
+
+.attendee-fields h2 {
+  margin-bottom: 10px;
+}
+
+.attendee-fields p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* WordPress Components Base Styles */
+.components-toggle-group-control {
+  border: 1px solid #1e1e1e;
+  border-radius: 2px;
+  display: inline-flex;
+  padding: 3px;
+}
+
+.components-toggle-group-control-option {
+  padding: 3px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 2px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.components-toggle-group-control-option[aria-pressed="true"] {
+  background: var(--wp-admin-theme-color);
+  color: #fff;
+}
+
+.components-toggle-group-control-option:hover:not([aria-pressed="true"]) {
+  background: #f0f0f0;
+}
+
+.components-tooltip {
+  background: #1e1e1e;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 4px 8px;
+  position: absolute;
+  z-index: 1000000;
+} 
