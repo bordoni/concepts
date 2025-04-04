@@ -1,0 +1,19 @@
+.attendee-fields {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.field-control {
+  margin-bottom: 2rem;
+}
+
+.fields-list h2 {
+  color: #1d2327;
+  margin-top: 0;
+}
+
+.fields-list p {
+  color: #50575e;
+  margin-bottom: 1.5rem;
+} 
