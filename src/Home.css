@@ -1,0 +1,43 @@
+.concepts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.concept-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.concept-card:hover {
+  transform: translateY(-5px);
+}
+
+.concept-card h2 {
+  color: #1d2327;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.concept-card p {
+  color: #50575e;
+  margin-bottom: 1.5rem;
+}
+
+.demo-link {
+  display: inline-block;
+  background-color: #2271b1;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.demo-link:hover {
+  background-color: #135e96;
+} 
