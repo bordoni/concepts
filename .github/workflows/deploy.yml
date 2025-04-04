@@ -30,11 +30,19 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v4
 
-      - name: Build all concepts
+      - name: Build home page
+        run: |
+          npm install
+          npm run build
+          # Move home page build to the root of the build directory
+          mkdir -p build
+          mv build/* build/
+
+      - name: Build concepts
         run: |
           # Find all concept directories (folders containing package.json)
           for dir in */; do
-            if [ -f "${dir}package.json" ]; then
+            if [ -f "${dir}package.json" ] && [ "$dir" != "node_modules/" ]; then
               echo "Building concept in ${dir}"
               cd "${dir}"
               npm install
