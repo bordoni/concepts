@@ -9,6 +9,9 @@ A demonstration of using WordPress ToggleGroupControl for attendee registration 
 
 [View Demo](https://bordoni.github.io/concepts/button-group-iac/)
 
+### More Concepts Coming Soon
+Additional concepts will be added to this repository and automatically deployed to GitHub Pages.
+
 ## Development
 
 Each concept is a standalone React application using WordPress Components.

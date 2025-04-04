@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -20,26 +20,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
-      - name: Setup Node
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Build
-        run: npm run build
-      
-      - name: Setup Pages
+
+      - name: Configure Pages
         uses: actions/configure-pages@v4
-      
+
+      - name: Build all concepts
+        run: |
+          # Find all concept directories (folders containing package.json)
+          for dir in */; do
+            if [ -f "${dir}package.json" ]; then
+              echo "Building concept in ${dir}"
+              cd "${dir}"
+              npm install
+              npm run build
+              # Move build output to a subdirectory matching the concept name
+              mkdir -p ../build/${dir%/}
+              mv build/* ../build/${dir%/}/
+              cd ..
+            fi
+          done
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'
+          path: build
 
   deploy:
     environment:
