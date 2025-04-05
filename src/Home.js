@@ -1,7 +1,8 @@
 import React from 'react';
+import { Button } from '@wordpress/components';
 import './Home.css';
 
-const BASE_PATH = '/concepts';
+const BASE_PATH = process.env.REACT_APP_BASE_PATH || '/concepts';
 
 const concepts = [
   {
@@ -19,14 +20,15 @@ function Home() {
         <div key={concept.path} className="concept-card">
           <h2>{concept.name}</h2>
           <p>{concept.description}</p>
-          <a 
+          <Button
             href={`${BASE_PATH}/${concept.path}/`}
-            className="demo-link"
+            variant="primary"
             target="_blank"
             rel="noopener noreferrer"
+            className="demo-link"
           >
             View Demo
-          </a>
+          </Button>
         </div>
       ))}
     </div>

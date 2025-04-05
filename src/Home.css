@@ -7,14 +7,17 @@
 
 .concept-card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 0;
   padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  box-shadow: none;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .concept-card:hover {
-  transform: translateY(-5px);
+  transform: none;
 }
 
 .concept-card h2 {
@@ -26,6 +29,13 @@
 .concept-card p {
   color: #50575e;
   margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.demo-link {
+  margin-top: auto;
+  width: fit-content;
+  align-self: center;
 }
 
 .demo-link {
